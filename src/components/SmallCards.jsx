@@ -11,7 +11,7 @@ const SmallCards = ({
 }) => {
   return (
     <div className="flex flex-col w-[393.33px] custom-bg-color rounded-[12px] custom-border">
-      <div className="flex-1 min-h-[248px] border-b border-white border-opacity-10">
+      <div className="flex-1 min-h-[248px] overflow-hidden">
         <img 
           src={imageSrc}
           alt="Header"
