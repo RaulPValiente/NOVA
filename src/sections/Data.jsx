@@ -9,7 +9,7 @@ const Data = () => {
         <Rive
           src={radar}
           stateMachines="State Machine 1"
-          className=" w-full h-full object-cover border-0 p-0 m-0"
+          className=" w-full h-full object-cover border-0 p-0 m-0 "
         />
       </div>
       <div className="w-[392px] h-[262px] rounded-xl custom-border"></div>
