@@ -28,7 +28,7 @@ const Footer = () => {
             <img
               src={Logo}
               alt="NOVA Real Chain"
-              className="h-auto w-full w-[99px] h-[33px]"
+              className="w-[99px] h-[32px]"
             />
           </div>
 
