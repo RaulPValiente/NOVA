@@ -26,6 +26,14 @@
     border: 1px solid rgba(255, 255, 255, 0.10);
   }
 
- 
+  .menu {
+    transition: 0.5s ease;
+    border-left: 1px solid transparent;
+}
+
+.menu:hover {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.00) 100%);
+    border-left: 1px solid white;
+}
 
 }
