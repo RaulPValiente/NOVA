@@ -1,8 +1,8 @@
-import Telegram from '../assets/Telegram.svg/';
-import X from '../assets/X.svg/';
-import Instagram from '../assets/Instagram.svg/';
-import Youtube from '../assets/Youtube.svg/';
-import Logo from '../assets/logo.png/';
+import Telegram from '../assets/Telegram.svg';
+import X from '../assets/X.svg';
+import Instagram from '../assets/Instagram.svg';
+import Youtube from '../assets/Youtube.svg';
+import Logo from '../assets/logo.png';
 
 const Footer = () => {
   return (
