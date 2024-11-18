@@ -79,7 +79,7 @@ const Navbar = () => {
         </div>
 
         {/* Botón Conectar Wallet */}
-        <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded">
+        <button className="bg-black/60 text-white font-semibold py-2 px-4 rounded-[100px] custom-border">
           Conectar Wallet
         </button>
       </nav>

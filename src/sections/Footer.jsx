@@ -6,25 +6,50 @@ import Logo from '../assets/logo.png';
 
 const Footer = () => {
   return (
-    <div className="bg-black">
-      <div className="flex justify-between px-24 pt-24 mb-[40px] relative">
-        {/* SVG centrado en la parte superior */}
-        <svg xmlns="http://www.w3.org/2000/svg" width="897" height="6" viewBox="0 0 897 6" fill="none" className="absolute top-0 left-1/2 transform -translate-x-1/2">
-          <path opacity="0.5" d="M0 3H896.611" stroke="url(#paint0_linear_340_3252)" strokeWidth="5" strokeDasharray="1 23" />
-          <defs>
-            <linearGradient id="paint0_linear_340_3252" x1="0" y1="3" x2="897" y2="3.00001" gradientUnits="userSpaceOnUse">
-              <stop stopColor="white" stopOpacity="0" />
-              <stop offset="0.485259" stopColor="white" stopOpacity="0.514741" />
-              <stop offset="1" stopColor="white" stopOpacity="0" />
-            </linearGradient>
-          </defs>
-        </svg>
+    <div className="bg-black pt-10 md:pt-[80px]">
+      {/* Div con logo y redes sociales (visible solo en móvil y tablet) */}
+      <div className="flex flex-col md:flex-row items-center md:justify-between space-y-4 md:space-y-0 pb-10 lg:hidden px-4 md:px-12">
+        {/* Logo */}
+        <div className="flex justify-center md:justify-start">
+          <img src={Logo} alt="NOVA Real Chain" className="w-[99px] h-[32px]" />
+        </div>
+        {/* Redes sociales */}
+        <div className="flex space-x-4 md:space-x-6 justify-center md:justify-end">
+          <a
+            href="#"
+            className="h-10 w-10 p-1.5 flex justify-center items-center"
+          >
+            <img src={X} alt="X" className="h-auto w-auto" />
+          </a>
+          <a
+            href="#"
+            className="h-10 w-10 p-1.5 flex justify-center items-center"
+          >
+            <img src={Telegram} alt="Telegram" className="h-auto w-auto" />
+          </a>
+          <a
+            href="#"
+            className="h-10 w-10 p-1.5 flex justify-center items-center"
+          >
+            <img src={Youtube} alt="Youtube" className="h-auto w-auto" />
+          </a>
+          <a
+            href="#"
+            className="h-10 w-10 p-1.5 flex justify-center items-center"
+          >
+            <img src={Instagram} alt="Instagram" className="h-auto w-auto" />
+          </a>
+        </div>
+      </div>
 
-        {/* Caja 1: Logo y Redes Sociales */}
-        <div className="flex flex-1 flex-col justify-between">
-          {/* Caja superior */}
+      {/* Espaciado entre el div de logo/socials y las columnas en tablet */}
+      <div className="hidden md:block h-[24px] lg:hidden"></div>
+
+      <div className="flex flex-wrap justify-between px-4 pb-6 md:px-12 lg:px-24 lg:pb-10 sm:pb-6">
+        {/* Caja 1: Logo y Redes Sociales (visible solo en escritorio) */}
+        <div className="flex flex-1 flex-col justify-between hidden lg:flex">
+          {/* Logo */}
           <div className="self-stretch">
-            {/* Contenido de la caja superior */}
             <img
               src={Logo}
               alt="NOVA Real Chain"
@@ -32,18 +57,30 @@ const Footer = () => {
             />
           </div>
 
-          {/* Caja inferior con 4 logos */}
+          {/* Redes sociales */}
           <div className="flex flex-row w-full">
-            <a href="#" className="h-11 w-11 p-1.5 flex justify-center items-center">
+            <a
+              href="#"
+              className="h-11 w-11 p-1.5 flex justify-center items-center"
+            >
               <img src={X} alt="X" className="h-auto w-auto" />
             </a>
-            <a href="#" className="h-11 w-11 p-1.5 flex justify-center items-center">
+            <a
+              href="#"
+              className="h-11 w-11 p-1.5 flex justify-center items-center"
+            >
               <img src={Telegram} alt="Telegram" className="h-auto w-auto" />
             </a>
-            <a href="#" className="h-11 w-11 p-1.5 flex justify-center items-center">
+            <a
+              href="#"
+              className="h-11 w-11 p-1.5 flex justify-center items-center"
+            >
               <img src={Youtube} alt="Youtube" className="h-auto w-auto" />
             </a>
-            <a href="#" className="h-11 w-11 p-1.5 flex justify-center items-center">
+            <a
+              href="#"
+              className="h-11 w-11 p-1.5 flex justify-center items-center"
+            >
               <img src={Instagram} alt="Instagram" className="h-auto w-auto" />
             </a>
           </div>
@@ -83,8 +120,8 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Columna 2: BLOGS */}
-        <div className="flex-1 flex-col justify-start items-start gap-2 inline-flex">
+        {/* Columna 2: BLOGS (oculta en móvil) */}
+        <div className="flex-1 flex-col justify-start items-start gap-2 inline-flex hidden sm:flex">
           <div className="self-stretch text-[var(--Text-Secondary, rgba(255, 255, 255, 0.70))] text-[13px] font-medium leading-[20px] mb-4">
             BLOGS
           </div>
@@ -141,8 +178,8 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Columna 4: LEGAL */}
-        <div className="flex-1 flex-col justify-start items-start gap-2 inline-flex">
+        {/* Columna 4: LEGAL (oculta en móvil) */}
+        <div className="flex-1 flex-col justify-start items-start gap-2 inline-flex hidden sm:flex">
           <div className="self-stretch text-[var(--Text-Secondary, rgba(255, 255, 255, 0.70))] text-[13px] font-medium leading-[20px] mb-4">
             LEGAL
           </div>
@@ -154,12 +191,12 @@ const Footer = () => {
             </div>
             <div className="w-full px-4 py-1.5 justify-start items-start gap-2 inline-flex">
               <div className="grow shrink basis-0 text-[var(--Text-primary, var(--Icon-primary, #FFF))] text-[13px] font-medium leading-[20px]">
-              Terms & <br /> Conditions
+                Terms & <br /> Conditions
               </div>
             </div>
             <div className="w-full px-4 py-1.5 justify-start items-start gap-2 inline-flex">
-            <div className="grow shrink basis-0 text-[var(--Text-primary, var(--Icon-primary, #FFF))] text-[13px] font-medium leading-[20px]">
-              Privacy Policy
+              <div className="grow shrink basis-0 text-[var(--Text-primary, var(--Icon-primary, #FFF))] text-[13px] font-medium leading-[20px]">
+                Privacy Policy
               </div>
             </div>
           </div>
@@ -167,7 +204,7 @@ const Footer = () => {
       </div>
 
       {/* Línea de derechos reservados */}
-      <div className="text-white/70 text-[13px] font-medium leading-[20px] border-t border-white/10 border-t-[1px] px-[96px] pt-[24px] pb-[48px]">
+      <div className="text-white/70 text-[13px] font-medium leading-[20px] border-t border-white/10 px-4 md:px-12 lg:px-24 pt-[24px] pb-[48px]">
         © 2024 NOVA Real Chain. All rights reserved.
       </div>
     </div>

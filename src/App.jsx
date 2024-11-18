@@ -18,23 +18,24 @@ function App() {
   return (
     <>
       <Banner/>
-      <Navbar/>
+      {/*<Navbar/>*/}
       <Header/>
       <Data />
+      {/*
       <MainProject 
         logoImage={Logo}
         productName="Project" 
-        productDescription="Make your finances work for you with the power of AI. From tracking expenses to planning investments, gain insights." 
-        raisedAmount="$100,000" 
-        currentInvestors="275" 
-        minimumInvestment="$100" 
+        productDescription="Make your finances work for you with the power of AI. From tracking expenses to planning investments, gain insights."
+        raisedAmount="$100,000"
+        currentInvestors="275"
+        minimumInvestment="$100"
         mainImage={Default}
       />
       <Projects/>
       <Quickstart/>
+      */}
       <Apply/>
       <Footer/>
-      
     </>
   )
 }
