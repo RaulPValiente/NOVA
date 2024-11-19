@@ -10,12 +10,12 @@ const SmallCards = ({
   minimumInvestment 
 }) => {
   return (
-    <div className="flex flex-col w-[393.33px] custom-bg-color rounded-[12px] custom-border">
-      <div className="flex-1 min-h-[248px] overflow-hidden">
+    <div className="flex flex-col w-[280px] sm:w-[351px] lg:w-[393.33px] h-[521px] custom-bg-color rounded-[12px] custom-border">
+      <div className="flex-1 min-h-[200px] overflow-hidden">
         <img 
           src={imageSrc}
           alt="Header"
-          className="w-full h-[100%] object-cover rounded-t-[12px]"
+          className="w-full h-full object-cover rounded-t-[12px]"
         />
       </div>
       <div className="flex-1 flex flex-col px-6 pb-6 pt-[44px] relative">
@@ -43,34 +43,39 @@ const SmallCards = ({
             </p>
           </div>
         </div>
-        <div className="flex inline-block items-center justify-between space-x-4">
-          <div className="flex-1 h-12 flex flex-col items-center justify-center gap-[3px]">
-            <span className="text-center text-white text-sm font-medium leading-tight">
+        <div className="flex flex-col gap-1.5 lg:flex-row lg:items-center lg:justify-between lg:space-x-4">
+          {/* Fundraise Goal */}
+          <div className="flex justify-between w-full lg:flex-1 lg:h-12 lg:flex-col lg:items-center lg:justify-center lg:gap-[3px]">
+            <span className="text-left lg:text-center text-white text-sm font-medium leading-tight">
               Fundraise Goal
             </span>
-            <span className="text-white/70 text-sm font-normal leading-tight">
+            <span className="text-right lg:text-white/70 text-sm font-normal leading-tight">
               {fundraisingGoal}
             </span>
           </div>
-          <div className="h-[63px] relative">
+          {/* Vertical line for desktop */}
+          <div className="hidden lg:block h-[63px] relative">
             <div className="absolute right-0 top-0 h-full w-[1px] bg-gradient-to-b from-black via-[rgba(255,255,255,0.20)] to-black"></div>
           </div>
-          <div className="flex-1 h-12 flex flex-col items-center justify-center gap-[3px]">
-            <span className="text-center text-white text-sm font-medium leading-tight">
+          {/* Current Investors */}
+          <div className="flex justify-between w-full lg:flex-1 lg:h-12 lg:flex-col lg:items-center lg:justify-center lg:gap-[3px]">
+            <span className="text-left lg:text-center text-white text-sm font-medium leading-tight">
               Current Investors
             </span>
-            <span className="text-white/70 text-sm font-normal leading-tight">
+            <span className="text-right lg:text-white/70 text-sm font-normal leading-tight">
               {currentInvestors}
             </span>
           </div>
-          <div className="h-[63px] relative">
+          {/* Vertical line for desktop */}
+          <div className="hidden lg:block h-[63px] relative">
             <div className="absolute left-0 top-0 h-full w-[1px] bg-gradient-to-b from-black via-[rgba(255,255,255,0.20)] to-black"></div>
           </div>
-          <div className="flex-1 h-12 flex flex-col items-center justify-center gap-[3px]">
-            <span className="text-center text-white text-sm font-medium leading-tight">
+          {/* Minimum Investment */}
+          <div className="flex justify-between w-full lg:flex-1 lg:h-12 lg:flex-col lg:items-center lg:justify-center lg:gap-[3px]">
+            <span className="text-left lg:text-center text-white text-sm font-medium leading-tight">
               Minimum Investment
             </span>
-            <span className="text-white/70 text-sm font-normal leading-tight">
+            <span className="text-right lg:text-white/70 text-sm font-normal leading-tight">
               {minimumInvestment}
             </span>
           </div>

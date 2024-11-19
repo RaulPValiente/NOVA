@@ -1,25 +1,23 @@
-import './App.css'
-import Banner from './sections/Banner'
-import Navbar from './sections/Navbar'
-import Header from './sections/Header'
-import Data from './sections/Data'
-import MainProject from './sections/MainProject'
-import Projects from './sections/Projects'
-import Quickstart from './sections/Quickstart'
-import Apply from './sections/Apply'
-import Footer from './sections/Footer'
+import './App.css';
+import Banner from './sections/Banner';
+import Navbar from './sections/Navbar';
+import Header from './sections/Header';
+import Data from './sections/Data';
+import MainProject from './sections/MainProject';
+import Projects from './sections/Projects';
+import Quickstart from './sections/Quickstart';
+import Apply from './sections/Apply';
+import Footer from './sections/Footer';
 
 import Logo from './assets/token.png';
 import Default from './assets/Default.svg';
 
-
 function App() {
-  
   return (
     <>
-      <Banner/>
+      <Banner />
       {/*<Navbar/>*/}
-      <Header/>
+      <Header />
       <Data />
       {/*
       <MainProject 
@@ -31,13 +29,15 @@ function App() {
         minimumInvestment="$100"
         mainImage={Default}
       />
-      <Projects/>
+      */}
+      <Projects />
+      {/*
       <Quickstart/>
       */}
-      <Apply/>
-      <Footer/>
+      <Apply />
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
