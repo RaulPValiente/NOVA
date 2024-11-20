@@ -11,7 +11,7 @@ const Projects = () => {
           Current & Upcoming Sales
         </div>
         {/* Texto descriptivo */}
-        <div className="text-white text-base font-normal sm:text-lg sm:font-normal leading-[27px] max-w-[798px]">
+        <div className="text-white text-base font-normal leading-[27px] w-full">
           Explore our current and upcoming projects that are ready to scale and
           make a real impact in the world. Join us in supporting their growth!
         </div>

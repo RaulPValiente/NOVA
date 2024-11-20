@@ -19,7 +19,7 @@ function App() {
       {/*<Navbar/>*/}
       <Header />
       <Data />
-      {/*
+      
       <MainProject 
         logoImage={Logo}
         productName="Project" 
@@ -29,11 +29,11 @@ function App() {
         minimumInvestment="$100"
         mainImage={Default}
       />
-      */}
+      
       <Projects />
-      {/*
+      
       <Quickstart/>
-      */}
+      
       <Apply />
       <Footer />
     </>
