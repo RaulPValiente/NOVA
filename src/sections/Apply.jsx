@@ -2,7 +2,7 @@ import ArrowButton from '../components/ArrowButton';
 
 const Apply = () => {
   return (
-    <div className="w-full max-w-[1200px] mx-auto pb-24 px-4 sm:px-12">
+    <div className="w-full max-w-[1200px] mx-auto pb-24 px-4 sm:px-12 lg:px-0">
       <div
         className="flex flex-col sm:flex-row h-auto sm:h-[520px] custom-border rounded-[12px]"
         style={{

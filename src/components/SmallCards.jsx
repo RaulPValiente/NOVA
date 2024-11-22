@@ -10,7 +10,7 @@ const SmallCards = ({
   minimumInvestment 
 }) => {
   return (
-    <div className="flex flex-col w-[280px] sm:w-[351px] lg:w-[393.33px] h-[521px] custom-bg-color rounded-[12px] custom-border">
+    <div className="flex flex-col w-[280px] sm:w-[351px] lg:w-[393.33px] h-[521px] bg-[#000505] rounded-[12px] custom-border">
       <div className="flex-1 min-h-[200px] overflow-hidden">
         <img 
           src={imageSrc}
@@ -24,8 +24,10 @@ const SmallCards = ({
             <img
               src={logoSrc}
               alt=""
-              className="w-[96px] h-[96px] rounded-full absolute top-[-90px] left-0 border-[12px] border-[#040105] shadow-[0_0_0_1px_rgba(255,255,255,0.10)]"
+              className="w-[96px] h-[96px] rounded-full absolute top-[-90px] left-0 border-[12px] border-[#000505]"
             />
+
+            {/* shadow-[0_0_0_1px_rgba(255,255,255,0.10)] */}
           </div>
           <button className="ml-auto custom-border bg-black/60 rounded-[60px] shadow">
             <p className="px-4 py-2 text-white text-[13px] font-medium leading-tight">

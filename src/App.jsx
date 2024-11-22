@@ -16,7 +16,7 @@ function App() {
   return (
     <>
       <Banner />
-      {/*<Navbar/>*/}
+      <Navbar/>
       <Header />
       <Data />
       

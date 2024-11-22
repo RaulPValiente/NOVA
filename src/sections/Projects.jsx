@@ -17,29 +17,34 @@ const Projects = () => {
         </div>
       </div>
 
-      <div className="flex flex-col sm:flex-row sm:flex-nowrap gap-3 justify-center sm:justify-start">
+      {/* Contenedor de las tarjetas con overflow-x-auto solo para móvil */}
+      <div className="flex sm:flex-nowrap gap-3 justify-start w-full overflow-x-auto sm:overflow-x-visible">
         {/* Tarjeta 1 */}
-        <SmallCards
-          imageSrc={Default}
-          logoSrc={Logo}
-          productTitle="Product"
-          productDescription="Make your finances work for you with the power of AI. From tracking expenses to planning investments, gain insights."
-          fundraisingGoal="$100,000"
-          currentInvestors="250"
-          minimumInvestment="$100"
-        />
+        <div className="flex-shrink-0">
+          <SmallCards
+            imageSrc={Default}
+            logoSrc={Logo}
+            productTitle="Product"
+            productDescription="Make your finances work for you with the power of AI. From tracking expenses to planning investments, gain insights."
+            fundraisingGoal="$100,000"
+            currentInvestors="250"
+            minimumInvestment="$100"
+          />
+        </div>
         {/* Tarjeta 2 */}
-        <SmallCards
-          imageSrc={Default}
-          logoSrc={Logo}
-          productTitle="Product"
-          productDescription="Make your finances work for you with the power of AI. From tracking expenses to planning investments, gain insights."
-          fundraisingGoal="$100,000"
-          currentInvestors="250"
-          minimumInvestment="$100"
-        />
-        {/* Tarjeta 3 (visible solo en escritorio) */}
-        <div className="hidden lg:block">
+        <div className="flex-shrink-0">
+          <SmallCards
+            imageSrc={Default}
+            logoSrc={Logo}
+            productTitle="Product"
+            productDescription="Make your finances work for you with the power of AI. From tracking expenses to planning investments, gain insights."
+            fundraisingGoal="$100,000"
+            currentInvestors="250"
+            minimumInvestment="$100"
+          />
+        </div>
+        {/* Tarjeta 3: Mostrar solo en móvil y escritorio, ocultar en tablet */}
+        <div className="block sm:hidden lg:block w-full">
           <SmallCards
             imageSrc={Default}
             logoSrc={Logo}
