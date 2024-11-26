@@ -1,6 +1,7 @@
 import SmallCards from '../components/SmallCards';
-import Logo from '../assets/token.png';
-import Default from '../assets/Default.svg';
+import Logo from '../assets/logo.svg';
+import soonTablet from '../assets/responsive/coming_soon_tablet.svg';
+
 
 const Projects = () => {
   return (
@@ -22,7 +23,7 @@ const Projects = () => {
         {/* Tarjeta 1 */}
         <div className="flex-shrink-0">
           <SmallCards
-            imageSrc={Default}
+            imageSrc={soonTablet}
             logoSrc={Logo}
             productTitle="Product"
             productDescription="Make your finances work for you with the power of AI. From tracking expenses to planning investments, gain insights."
@@ -34,7 +35,7 @@ const Projects = () => {
         {/* Tarjeta 2 */}
         <div className="flex-shrink-0">
           <SmallCards
-            imageSrc={Default}
+            imageSrc={soonTablet}
             logoSrc={Logo}
             productTitle="Product"
             productDescription="Make your finances work for you with the power of AI. From tracking expenses to planning investments, gain insights."
@@ -46,7 +47,7 @@ const Projects = () => {
         {/* Tarjeta 3: Mostrar solo en móvil y escritorio, ocultar en tablet */}
         <div className="block sm:hidden lg:block w-full">
           <SmallCards
-            imageSrc={Default}
+            imageSrc={soonTablet}
             logoSrc={Logo}
             productTitle="Product"
             productDescription="Make your finances work for you with the power of AI. From tracking expenses to planning investments, gain insights."

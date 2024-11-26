@@ -36,7 +36,7 @@ const Header = () => {
           Back the future’s game-changers and earn massive profits + shares!
         </h2>
       </div>
-      <ArrowButton text="Get Started" />
+      <ArrowButton text="Get Started" url='https://novarealchain.com/' />
     </div>
   );
 };

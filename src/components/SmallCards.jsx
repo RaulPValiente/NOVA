@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import CircularButton from '../components/CircularButton.jsx'; // Importa el componente CircularButton
 
 const SmallCards = ({ 
   imageSrc,
@@ -23,17 +24,12 @@ const SmallCards = ({
           <div className="flex-1 relative">
             <img
               src={logoSrc}
-              alt=""
+              alt="Product Logo"
               className="w-[96px] h-[96px] rounded-full absolute top-[-90px] left-0 border-[12px] border-[#000505]"
             />
-
-            {/* shadow-[0_0_0_1px_rgba(255,255,255,0.10)] */}
           </div>
-          <button className="ml-auto custom-border bg-black/60 rounded-[60px] shadow">
-            <p className="px-4 py-2 text-white text-[13px] font-medium leading-tight">
-              Participate
-            </p>
-          </button>
+          {/* Botón CircularButton */}
+          <CircularButton url="#" text="Participate" />
         </div>
         <div className="flex flex-1 flex-col mb-6">
           <div className="mb-4">
@@ -100,7 +96,7 @@ SmallCards.propTypes = {
 
 // Valor predeterminado para la prop imageSrc
 SmallCards.defaultProps = {
-  imageSrc: '../assets/Default.svg',
+  imageSrc: '../assets/responsive/coming_soon_tablet.svg',
 };
 
 export default SmallCards;

@@ -9,14 +9,49 @@ import Quickstart from './sections/Quickstart';
 import Apply from './sections/Apply';
 import Footer from './sections/Footer';
 
+import { useMediaQuery } from '@react-hook/media-query';
+
 import Logo from './assets/token.png';
-import Default from './assets/Default.svg';
+import Default from './assets/card_image.svg';
+import BackgroundDesktop from './assets/rive/bg.mp4';
+import BackgroundTablet from './assets/responsive/bg_tablet.png';
+import BackgroundMobile from './assets/responsive/bg_mobile.png';
 
 function App() {
+  const isMobile = useMediaQuery('(max-width: 767px)');
+  const isTablet = useMediaQuery('(min-width: 768px) and (max-width: 1024px)');
+
   return (
-    <>
+    <div className="relative overflow-x-hidden"> {/* Forzamos overflow oculto en el eje X */}
+      {/* Fondo dinámico */}
+      <div className="absolute inset-0 -z-10 w-screen h-screen overflow-hidden">
+        {isMobile ? (
+          <img
+            src={BackgroundMobile}
+            alt="Background Mobile"
+            className="absolute top-0 left-0 w-full h-full object-cover"
+          />
+        ) : isTablet ? (
+          <img
+            src={BackgroundTablet}
+            alt="Background Tablet"
+            className="absolute top-0 left-0 w-full h-full object-cover"
+          />
+        ) : (
+          <video
+            src={BackgroundDesktop}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute top-0 left-0 w-[100vw] h-[100vh] object-cover"
+          />
+        )}
+      </div>
+
+      {/* Contenido principal */}
       <Banner />
-      <Navbar/>
+      <Navbar />
       <Header />
       <Data />
       
@@ -31,12 +66,10 @@ function App() {
       />
       
       <Projects />
-      
-      <Quickstart/>
-      
+      <Quickstart />
       <Apply />
       <Footer />
-    </>
+    </div>
   );
 }
 

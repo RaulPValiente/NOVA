@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useMediaQuery } from '@react-hook/media-query';
-import arrowIcon from '../assets/arrow-right.svg';
+import ArrowButton2 from '../components/ArrowButton2'; // Asegúrate de importar el componente
 
 const MainProject = ({
   logoImage,
@@ -63,11 +63,11 @@ const MainProject = ({
               />
             </div>
             {/* Botón para tablet */}
-            <button className="ml-auto custom-border bg-black/60 rounded-[60px] shadow hidden md:block">
-              <p className="px-4 py-2 text-white text-[13px] font-medium leading-tight">
-                Participate
-              </p>
-            </button>
+            <ArrowButton2
+              url="#"
+              text="Participate"
+              className="ml-auto hidden md:block"
+            />
           </div>
           <div className="flex flex-1 flex-col mb-6 mt-6 sm:mt-0">
             <div className="mb-4">
@@ -110,11 +110,7 @@ const MainProject = ({
         </div>
         {/* Botón adicional para móvil */}
         <div className="flex justify-center mt-auto pb-6 md:hidden">
-          <button className="custom-border bg-black/60 rounded-[60px] shadow">
-            <p className="px-4 py-2 text-white text-[13px] font-medium leading-tight">
-              Participate
-            </p>
-          </button>
+          <ArrowButton2 url="#" text="Participate" />
         </div>
       </div>
     );
@@ -133,12 +129,7 @@ const MainProject = ({
               Counter
             </div>
           </div>
-          <div className="h-11 px-4 py-2 bg-black/50 rounded-lg shadow border custom-border backdrop-blur-[20px] flex items-center gap-2">
-            <div className="text-white text-[13px] font-medium leading-tight">
-              Participate Now
-            </div>
-            <img src={arrowIcon} alt="Arrow" className="w-4 h-4" />
-          </div>
+          <ArrowButton2 url="#" text="Participate Now" />
         </div>
         <div className="flex flex-col gap-8 mt-8">
           <div className="w-[78px] h-[78px] rounded-full overflow-hidden">

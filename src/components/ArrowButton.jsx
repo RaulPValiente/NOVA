@@ -1,23 +1,31 @@
 import PropTypes from 'prop-types';
-import arrowIcon from '../assets/arrow-right.svg'; // Importa el archivo SVG
+import arrowIcon from '../assets/arrow-right.svg';
 
-const ArrowButton = ({ text }) => {
+const ArrowButton = ({ url, text }) => {
   return (
-    <div className="inline-flex h-11 px-5 py-2.5 bg-black/50 rounded-lg shadow border custom-border backdrop-blur-[20px] items-center justify-center lg:justify-start gap-2.5">
-      <div className="text-white text-base font-medium leading-normal">
+    <a
+      href={url || '#'}
+      className="h-11 pl-5 pr-5 py-2.5 rounded-lg shadow border border-white backdrop-blur-[20px] justify-start items-center gap-2.5 inline-flex cursor-pointer group
+        bg-gradient-to-r from-[#b0ffff] to-[#008c8c]
+        hover:bg-gradient-to-l hover:from-[#b0ffff] hover:to-[#008c8c]"
+    >
+      <div className="text-[#000a0a] text-base font-medium leading-normal">
         {text}
       </div>
-      <div className="hidden lg:flex h-6 items-center">
-        {/* El icono solo aparece en pantallas grandes */}
-        <img src={arrowIcon} alt="Arrow" className="w-6 h-6" />
+      <div className="h-6 items-center flex relative">
+        <img
+          src={arrowIcon}
+          alt="Arrow"
+          className="w-6 h-6 transition-transform duration-300 group-hover:translate-x-2"
+        />
       </div>
-    </div>
+    </a>
   );
 };
 
-// Definición de PropTypes
 ArrowButton.propTypes = {
-  text: PropTypes.string.isRequired, // Define que 'text' es una prop requerida de tipo string
+  url: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
 };
 
 export default ArrowButton;
