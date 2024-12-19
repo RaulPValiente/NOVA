@@ -22,14 +22,14 @@ function App() {
   const isTablet = useMediaQuery('(min-width: 768px) and (max-width: 1024px)');
 
   return (
-    <div className="relative overflow-x-hidden"> {/* Forzamos overflow oculto en el eje X */}
+    <div className="relative"> {/* Forzamos overflow oculto en el eje X */}
       {/* Fondo dinámico */}
       <div className="absolute inset-0 -z-10 w-screen h-screen overflow-hidden">
         {isMobile ? (
           <img
             src={BackgroundMobile}
             alt="Background Mobile"
-            className="absolute top-0 left-0 w-full h-full object-cover"
+            className="absolute top-0 left-0 w-full h-screen object-none"
           />
         ) : isTablet ? (
           <img
@@ -63,6 +63,7 @@ function App() {
         currentInvestors="275"
         minimumInvestment="$100"
         mainImage={Default}
+        deadline= "2024-12-15T23:59:59Z"
       />
       
       <Projects />

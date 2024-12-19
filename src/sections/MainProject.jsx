@@ -1,6 +1,6 @@
-import PropTypes from 'prop-types';
 import { useMediaQuery } from '@react-hook/media-query';
-import ArrowButton2 from '../components/ArrowButton2'; // Asegúrate de importar el componente
+import ArrowButton2 from '../components/ArrowButton2';
+import { useState, useEffect } from 'react';
 
 const MainProject = ({
   logoImage,
@@ -10,9 +10,40 @@ const MainProject = ({
   currentInvestors,
   minimumInvestment,
   mainImage,
+  deadline, // Pasar el deadline como parámetro en formato ISO 8601 (e.g., "2024-12-15T23:59:59Z")
 }) => {
   const isTablet = useMediaQuery('(min-width: 768px) and (max-width: 1024px)');
   const isMobile = useMediaQuery('(max-width: 767px)');
+
+  // Estado para el tiempo restante
+  const [timeLeft, setTimeLeft] = useState('');
+
+  // Función para calcular el tiempo restante
+  const calculateTimeLeft = () => {
+    const now = new Date();
+    const end = new Date(deadline);
+    const difference = end - now;
+
+    if (difference <= 0) {
+      return '0d 0h 0m 0s';
+    }
+
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((difference / (1000 * 60)) % 60);
+    const seconds = Math.floor((difference / 1000) % 60);
+
+    return `${days}d ${hours}h ${minutes}m ${seconds}s`;
+  };
+
+  // Actualizar el contador en vivo
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+
+    return () => clearInterval(interval); // Limpieza del intervalo
+  }, [deadline]);
 
   // Diseño para tablet y móvil
   if (isTablet || isMobile) {
@@ -49,12 +80,12 @@ const MainProject = ({
                   : 'text-white text-sm font-semibold leading-tight'
               }
             >
-              Counter
+              {timeLeft}
             </p>
           </div>
         </div>
         <div className="flex-1 flex flex-col px-6 pb-6 pt-[44px] relative">
-          <div className="flex-1 flex justify-between items-start relative">
+          <div className="flex-1 flex justify-between items-start relative sm:pb-5 lg:pb-0">
             <div className="flex-1 relative">
               <img
                 src={logoImage}
@@ -62,12 +93,7 @@ const MainProject = ({
                 className="w-[96px] h-[96px] rounded-full absolute top-[-90px] left-[-16px] border-[12px] border-[#040105] shadow-[0_0_0_1px_rgba(255,255,255,0.10)]"
               />
             </div>
-            {/* Botón para tablet */}
-            <ArrowButton2
-              url="#"
-              text="Participate"
-              className="ml-auto hidden md:block"
-            />
+            
           </div>
           <div className="flex flex-1 flex-col mb-6 mt-6 sm:mt-0">
             <div className="mb-4">
@@ -109,7 +135,7 @@ const MainProject = ({
           </div>
         </div>
         {/* Botón adicional para móvil */}
-        <div className="flex justify-center mt-auto pb-6 md:hidden">
+        <div className="flex justify-center mt-auto pb-6 lg:hidden">
           <ArrowButton2 url="#" text="Participate" />
         </div>
       </div>
@@ -126,7 +152,7 @@ const MainProject = ({
               Registration Ends in:
             </div>
             <div className="text-white text-base font-semibold leading-normal">
-              Counter
+              {timeLeft}
             </div>
           </div>
           <ArrowButton2 url="#" text="Participate Now" />
@@ -186,25 +212,6 @@ const MainProject = ({
       </div>
     </div>
   );
-};
-
-// Validaciones de props
-MainProject.propTypes = {
-  logoImage: PropTypes.string.isRequired,
-  productName: PropTypes.string.isRequired,
-  productDescription: PropTypes.string,
-  raisedAmount: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  currentInvestors: PropTypes.number,
-  minimumInvestment: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  mainImage: PropTypes.string.isRequired,
-};
-
-// Valores predeterminados para props opcionales
-MainProject.defaultProps = {
-  productDescription: 'No description available.',
-  raisedAmount: 0,
-  currentInvestors: 0,
-  minimumInvestment: 0,
 };
 
 export default MainProject;

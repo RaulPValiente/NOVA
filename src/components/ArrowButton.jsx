@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+
 import arrowIcon from '../assets/arrow-right.svg';
 
 const ArrowButton = ({ url, text }) => {
@@ -23,9 +23,5 @@ const ArrowButton = ({ url, text }) => {
   );
 };
 
-ArrowButton.propTypes = {
-  url: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
-};
 
 export default ArrowButton;

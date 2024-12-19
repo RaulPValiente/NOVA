@@ -11,7 +11,7 @@ const Quickstart = () => {
   const isTablet = useMediaQuery('(min-width: 768px) and (max-width: 1024px)');
 
   return (
-    <div className="w-full">
+    <div className="w-full pb-12 sm:pb-24">
       {/* Contenedor general con todo incluido */}
       <div className="max-w-[1200px] mx-auto px-4 sm:px-12 md:px-16 lg:px-0">
         {/* Título y subtítulo */}
@@ -42,21 +42,24 @@ const Quickstart = () => {
           src={MobileImage}
           alt="Steps"
           className="w-full object-cover"
-          style={{ marginTop: '-570px' }}
+          
         />
       ) : isTablet ? (
         <img
           src={TabletImage}
           alt="Steps"
-          className="w-full object-cover relative"
-          style={{ marginTop: '-137px' }}
+          className="w-full object-cover relative pt-4"
+          
         />
       ) : (
-        <Rive
-    src={steps}
-    stateMachines="State Machine 1"
-    className="w-full h-full object-cover"
-  />
+        <div className='w-screen h-screen -mt-20'>
+          <Rive
+          src={steps}
+          stateMachines="State Machine 1"
+          className="w-full h-full object-cover"
+        />
+        </div>
+        
       )}
     </div>
   );
