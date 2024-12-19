@@ -1,5 +1,5 @@
-import Telegram from '../assets/telegram.svg';
-import X from '../assets/x.svg';
+import Telegram from '../assets/Telegram.svg';
+import X from '../assets/X.svg';
 import Instagram from '../assets/instagram.svg';
 import Youtube from '../assets/youtube.svg';
 import Logo from '../assets/logo.png';
