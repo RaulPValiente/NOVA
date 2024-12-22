@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useMediaQuery } from '@react-hook/media-query';
+import { useSDK } from '@metamask/sdk-react'; // Usamos useSDK para conectar a MetaMask
 
 import logo from '../assets/logo.png';
 import line from '../assets/line-h.svg';
@@ -11,15 +12,28 @@ import ConnectButton from '../components/ConnectButton';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isConnected, setIsConnected] = useState(false); // Estado para manejar la conexión
 
   // Detecta si estamos en móvil o tablet (max-width: 1024px)
   const isMobileOrTablet = useMediaQuery('(max-width: 1024px)');
   const isMobile = useMediaQuery('(max-width: 768px)');
   const isTablet = useMediaQuery('(min-width: 769px) and (max-width: 1024px)');
 
+  // Usar useSDK para conectar a MetaMask
+  const { sdk, connected, connecting } = useSDK(); // Recibimos el estado de MetaMask
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  // Cambiar el estado de isConnected si la wallet está conectada
+  useEffect(() => {
+    if (connected) {
+      setIsConnected(true);
+    } else {
+      setIsConnected(false);
+    }
+  }, [connected]);
 
   // Bloquear/desbloquear el scroll del body según el estado del menú
   useEffect(() => {
@@ -47,6 +61,36 @@ const Navbar = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, [isOpen]);
+
+  // Función para conectar MetaMask
+  const handleConnectWallet = async () => {
+    try {
+      if (connecting || connected) return; // Evita múltiples clics
+
+      // Intentar conectar a MetaMask
+      await sdk?.connect();
+
+      // Se actualiza el estado al conectar
+      setIsConnected(true);
+    } catch (err) {
+      console.error("Error al conectar MetaMask:", err);
+    }
+  };
+
+  // Función para desconectar MetaMask
+  const handleDisconnectWallet = async () => {
+    try {
+      if (!connected) return; // Si ya está desconectado no hace nada
+
+      // Desconectar la wallet
+      await sdk?.disconnect();
+
+      // Se actualiza el estado al desconectar
+      setIsConnected(false);
+    } catch (err) {
+      console.error("Error al desconectar MetaMask:", err);
+    }
+  };
 
   return (
     <div
@@ -139,7 +183,12 @@ const Navbar = () => {
         )}
 
         {/* Botón para conectar wallet solo en escritorio */}
-        {!isMobileOrTablet && <ConnectButton isMobile={false} />}
+        {!isMobileOrTablet && (
+          <ConnectButton
+            isConnected={isConnected}
+            onClick={isConnected ? handleDisconnectWallet : handleConnectWallet}
+          />
+        )}
       </nav>
 
       {/* Menú desplegable en móviles y tabletas */}
@@ -151,7 +200,11 @@ const Navbar = () => {
         >
           {/* Parte superior */}
           <div className="flex flex-col items-center w-full">
-            <ConnectButton isMobile={true} onClick={toggleMenu} />
+            <ConnectButton
+              isMobile={true}
+              isConnected={isConnected}
+              onClick={isConnected ? handleDisconnectWallet : handleConnectWallet}
+            />
             <img src={lineh} className="w-full" alt="" />
             <a
               href="#"
@@ -161,15 +214,15 @@ const Navbar = () => {
               Home
             </a>
             <a
-  href="#"
-  className="w-full py-2.5 px-5 text-center text-white text-base font-medium leading-normal 
-  border-t-[1px] border-b-[1px] border-solid border-black/10
-  bg-[radial-gradient(59.54%_231.23%_at_49.54%_115.28%,rgba(0,255,255,0.4)_0%,rgba(0,0,0,0.2)_100%),linear-gradient(0deg,rgba(0,255,255,0.01)_0%,rgba(0,255,255,0.01)_100%)] 
-  shadow-[0px_1px_0px_0px_rgba(0,0,0,0.05),0px_4px_4px_0px_rgba(0,0,0,0.05),0px_10px_10px_0px_rgba(0,0,0,0.10)]"
-  onClick={toggleMenu}
->
-  RWA Launchpad
-</a>
+              href="#"
+              className="w-full py-2.5 px-5 text-center text-white text-base font-medium leading-normal 
+              border-t-[1px] border-b-[1px] border-solid border-black/10
+              bg-[radial-gradient(59.54%_231.23%_at_49.54%_115.28%,rgba(0,255,255,0.4)_0%,rgba(0,0,0,0.2)_100%),linear-gradient(0deg,rgba(0,255,255,0.01)_0%,rgba(0,255,255,0.01)_100%)] 
+              shadow-[0px_1px_0px_0px_rgba(0,0,0,0.05),0px_4px_4px_0px_rgba(0,0,0,0.05),0px_10px_10px_0px_rgba(0,0,0,0.10)]"
+              onClick={toggleMenu}
+            >
+              RWA Launchpad
+            </a>
 
             <a
               href="#"
@@ -195,20 +248,32 @@ const Navbar = () => {
           </div>
 
           {/* Parte inferior */}
-          <div className="flex flex-col items-center space-y-4 mb-6">
-            <img src={lineh} className="w-full" alt="" />
-            <p className="text-[#f1ffff]/70 text-sm font-normal leading-tight">
-              Join our community
-            </p>
-            <div className="flex gap-[6px] rounded-[30px] custom-border p-0.5 bg-[linear-gradient(180deg,rgba(255,255,255,0.11)_0%,rgba(204,204,204,0.09)_20.17%,rgba(0,0,0,0)_100%)] shadow-[0px_30px_60px_0px_rgba(0,0,0,0.5)] backdrop-blur-[10px]">
-              <div className="px-[16px] py-[6px] bg-black/60 rounded-[100px] shadow custom-border">
-                <img src={Telegram} alt="Telegram" />
-              </div>
-              <div className="px-[16px] py-[6px] bg-black/60 rounded-[100px] shadow custom-border">
-                <img src={X} alt="Twitter" />
-              </div>
-            </div>
-          </div>
+          {/* Parte inferior del menú desplegable */}
+<div className="flex flex-col items-center space-y-4 mb-6">
+  <img src={lineh} className="w-full" alt="" />
+  <p className="text-[#f1ffff]/70 text-sm font-normal leading-tight">
+    Join our community!
+  </p>
+  <div className="flex gap-[6px] rounded-[30px] custom-border p-0.5 bg-[linear-gradient(180deg,rgba(255,255,255,0.11)_0%,rgba(204,204,204,0.09)_20.17%,rgba(0,0,0,0)_100%)] shadow-[0px_30px_60px_0px_rgba(0,0,0,0.5)] backdrop-blur-[10px]">
+    <a 
+      href="https://t.me/NovaRealChainENG"
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="px-[16px] py-[6px] bg-black/60 rounded-[100px] shadow custom-border"
+    >
+      <img src={Telegram} alt="Telegram" />
+    </a>
+    <a 
+      href="https://x.com/novarealchain"
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="px-[16px] py-[6px] bg-black/60 rounded-[100px] shadow custom-border"
+    >
+      <img src={X} alt="Twitter" />
+    </a>
+  </div>
+</div>
+
         </div>
       )}
     </div>
