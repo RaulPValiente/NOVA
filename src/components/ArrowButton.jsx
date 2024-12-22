@@ -5,7 +5,7 @@ const ArrowButton = ({ url, text }) => {
   return (
     <a
       href={url || '#'}
-      className="h-11 pl-5 pr-5 py-2.5 rounded-lg shadow border border-white backdrop-blur-[20px] justify-start items-center gap-2.5 inline-flex cursor-pointer group
+      className="h-11 pl-5 pr-5 py-2.5 rounded-lg shadow border border-black/10 justify-start items-center gap-2.5 inline-flex cursor-pointer group
         bg-gradient-to-r from-[#b0ffff] to-[#008c8c]
         hover:bg-gradient-to-l hover:from-[#b0ffff] hover:to-[#008c8c]"
     >

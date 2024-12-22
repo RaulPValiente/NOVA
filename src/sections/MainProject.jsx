@@ -57,7 +57,7 @@ const MainProject = ({
 
     return (
       <div
-        className={`${containerStyles} bg-[#000505] rounded-[12px] custom-border mb-[96px] relative`}
+        className={`${containerStyles} bg-[#000505] rounded-[12px] custom-border mb-[96px] relative overflow-x-hidden`}
       >
         {/* Imagen principal */}
         <div className="flex-1 overflow-hidden relative">
@@ -144,7 +144,7 @@ const MainProject = ({
 
   // Diseño para escritorio
   return (
-    <div className="w-full max-w-[1200px] mx-auto px-4 sm:px-12 md:px-16 lg:px-0 mb-24 custom-bg-color custom-border rounded-xl flex flex-col lg:flex-row">
+    <div className="max-w-[1200px] mx-auto px-4 sm:px-12 md:px-16 lg:px-0 mb-24 custom-bg-color custom-border rounded-xl flex flex-col lg:flex-row">
       <div className="flex-1 p-4 sm:p-8 border-b lg:border-b-0 lg:border-r border-white/10 flex flex-col justify-between">
         <div className="h-auto flex flex-col sm:flex-row sm:justify-between items-start sm:items-center gap-4 sm:gap-0">
           <div className="flex flex-col">

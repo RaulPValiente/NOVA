@@ -49,13 +49,12 @@ const Navbar = () => {
   }, [isOpen]);
 
   return (
-    
     <div
       className={`px-4 sm:px-12 py-4 sticky top-0 z-50 ${
         isOpen
           ? 'bg-[#000a0a]'
           : isScrolled
-          ? 'bg-[#000a0a]/50'
+          ? 'bg-[#000a0a]/50 backdrop-blur-md'
           : 'bg-transparent'
       }`}
     >
@@ -162,12 +161,16 @@ const Navbar = () => {
               Home
             </a>
             <a
-              href="#"
-              className="w-full py-2.5 px-5 text-center text-white text-base font-medium leading-normal"
-              onClick={toggleMenu}
-            >
-              RWA Launchpad
-            </a>
+  href="#"
+  className="w-full py-2.5 px-5 text-center text-white text-base font-medium leading-normal 
+  border-t-[1px] border-b-[1px] border-solid border-black/10
+  bg-[radial-gradient(59.54%_231.23%_at_49.54%_115.28%,rgba(0,255,255,0.4)_0%,rgba(0,0,0,0.2)_100%),linear-gradient(0deg,rgba(0,255,255,0.01)_0%,rgba(0,255,255,0.01)_100%)] 
+  shadow-[0px_1px_0px_0px_rgba(0,0,0,0.05),0px_4px_4px_0px_rgba(0,0,0,0.05),0px_10px_10px_0px_rgba(0,0,0,0.10)]"
+  onClick={toggleMenu}
+>
+  RWA Launchpad
+</a>
+
             <a
               href="#"
               className="w-full py-2.5 px-5 text-center text-white text-base font-medium leading-normal"

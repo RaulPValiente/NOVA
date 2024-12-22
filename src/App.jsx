@@ -22,9 +22,10 @@ function App() {
   const isTablet = useMediaQuery('(min-width: 768px) and (max-width: 1024px)');
 
   return (
-    <div className="relative"> {/* Forzamos overflow oculto en el eje X */}
+    
+    <div className="relative overflow-clip"> {/* Forzamos overflow oculto en el eje X */}
       {/* Fondo dinámico */}
-      <div className="absolute inset-0 -z-10 w-screen h-screen overflow-hidden">
+      <div className="absolute inset-0 -z-10 w-screen h-screen">
         {isMobile ? (
           <img
             src={BackgroundMobile}

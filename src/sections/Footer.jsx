@@ -16,25 +16,25 @@ const Footer = () => {
         {/* Redes sociales */}
         <div className="flex space-x-4 md:space-x-6 justify-center md:justify-end">
           <a
-            href="#"
+            href="https://x.com/novarealchain"
             className="h-10 w-10 p-1.5 flex justify-center items-center"
           >
             <img src={X} alt="X" className="h-auto w-auto" />
           </a>
           <a
-            href="#"
+            href="https://t.me/NovaRealChainENG"
             className="h-10 w-10 p-1.5 flex justify-center items-center"
           >
             <img src={Telegram} alt="Telegram" className="h-auto w-auto" />
           </a>
           <a
-            href="#"
+            href="https://www.youtube.com/@NovaRealChain"
             className="h-10 w-10 p-1.5 flex justify-center items-center"
           >
             <img src={Youtube} alt="Youtube" className="h-auto w-auto" />
           </a>
           <a
-            href="#"
+            href="https://www.instagram.com/novarealchain/"
             className="h-10 w-10 p-1.5 flex justify-center items-center"
           >
             <img src={Instagram} alt="Instagram" className="h-auto w-auto" />
@@ -50,35 +50,37 @@ const Footer = () => {
         <div className="flex flex-1 flex-col justify-between hidden lg:flex">
           {/* Logo */}
           <div className="self-stretch">
-            <img
-              src={Logo}
-              alt="NOVA Real Chain"
-              className="w-[99px] h-[32px]"
-            />
+            <a href="#" className="w-[99px] h-[32px]">
+              <img
+                src={Logo}
+                alt="NOVA Real Chain"
+                className="w-[99px] h-[32px]"
+              />
+            </a>
           </div>
 
           {/* Redes sociales */}
           <div className="flex flex-row w-full">
             <a
-              href="#"
+              href="https://x.com/novarealchain"
               className="h-11 w-11 p-1.5 flex justify-center items-center"
             >
               <img src={X} alt="X" className="h-auto w-auto" />
             </a>
             <a
-              href="#"
+              href="https://t.me/NovaRealChainENG"
               className="h-11 w-11 p-1.5 flex justify-center items-center"
             >
               <img src={Telegram} alt="Telegram" className="h-auto w-auto" />
             </a>
             <a
-              href="#"
+              href="https://www.youtube.com/@NovaRealChain"
               className="h-11 w-11 p-1.5 flex justify-center items-center"
             >
               <img src={Youtube} alt="Youtube" className="h-auto w-auto" />
             </a>
             <a
-              href="#"
+              href="https://www.instagram.com/novarealchain/"
               className="h-11 w-11 p-1.5 flex justify-center items-center"
             >
               <img src={Instagram} alt="Instagram" className="h-auto w-auto" />
@@ -93,29 +95,44 @@ const Footer = () => {
           </div>
           <div className="self-stretch h-auto flex-col justify-start items-start gap-2 flex">
             <div className="w-full px-4 py-1.5 justify-start items-start gap-2 inline-flex">
-              <div className="grow shrink basis-0 text-[var(--Text-primary, var(--Icon-primary, #FFF))] text-[13px] font-medium leading-[20px]">
+              <a
+                href="#"
+                className="grow shrink basis-0 text-[var(--Text-primary, var(--Icon-primary, #FFF))] text-[13px] font-medium leading-[20px]"
+              >
                 RWA Nodes
-              </div>
+              </a>
             </div>
             <div className="w-full px-4 py-1.5 justify-start items-start gap-2 inline-flex">
-              <div className="grow shrink basis-0 text-[var(--Text-primary, var(--Icon-primary, #FFF))] text-[13px] font-medium leading-[20px]">
+              <a
+                href="#"
+                className="grow shrink basis-0 text-[var(--Text-primary, var(--Icon-primary, #FFF))] text-[13px] font-medium leading-[20px]"
+              >
                 RWA Real Estate
-              </div>
+              </a>
             </div>
             <div className="w-full px-4 py-1.5 justify-start items-start gap-2 inline-flex">
-              <div className="grow shrink basis-0 text-[var(--Text-primary, var(--Icon-primary, #FFF))] text-[13px] font-medium leading-[20px]">
+              <a
+                href="#"
+                className="grow shrink basis-0 text-[var(--Text-primary, var(--Icon-primary, #FFF))] text-[13px] font-medium leading-[20px]"
+              >
                 RWA Miners
-              </div>
+              </a>
             </div>
             <div className="w-full px-4 py-1.5 justify-start items-start gap-2 inline-flex">
-              <div className="grow shrink basis-0 text-gray-500 text-[13px] font-medium leading-[20px]">
+              <a
+                href="#"
+                className="grow shrink basis-0 text-gray-500 text-[13px] font-medium leading-[20px]"
+              >
                 RWA Collectibles
-              </div>
+              </a>
             </div>
             <div className="w-full px-4 py-1.5 justify-start items-start gap-2 inline-flex">
-              <div className="grow shrink basis-0 text-gray-500 text-[13px] font-medium leading-[20px]">
+              <a
+                href="#"
+                className="grow shrink basis-0 text-gray-500 text-[13px] font-medium leading-[20px]"
+              >
                 RWA Lootboxes
-              </div>
+              </a>
             </div>
           </div>
         </div>
@@ -127,24 +144,36 @@ const Footer = () => {
           </div>
           <div className="self-stretch h-auto flex-col justify-start items-start gap-2 flex">
             <div className="w-full px-4 py-1.5 justify-start items-start gap-2 inline-flex">
-              <div className="grow shrink basis-0 text-[var(--Text-primary, var(--Icon-primary, #FFF))] text-[13px] font-medium leading-[20px]">
+              <a
+                href="https://novarealchain.com/comprehensive-guide-to-real-world-asset-rwa-coins-on-coinmarketcap-and-the-emerging-nova-real-chain/"
+                className="grow shrink basis-0 text-[var(--Text-primary, var(--Icon-primary, #FFF))] text-[13px] font-medium leading-[20px]"
+              >
                 What are real-world <br /> assets (RWA)?
-              </div>
+              </a>
             </div>
             <div className="w-full px-4 py-1.5 justify-start items-start gap-2 inline-flex">
-              <div className="grow shrink basis-0 text-[var(--Text-primary, var(--Icon-primary, #FFF))] text-[13px] font-medium leading-[20px]">
+              <a
+                href="https://novarealchain.com/make-easy-money-with-nova-real-chain/"
+                className="grow shrink basis-0 text-[var(--Text-primary, var(--Icon-primary, #FFF))] text-[13px] font-medium leading-[20px]"
+              >
                 How to Make Money <br /> with NOVA Real Chain?
-              </div>
+              </a>
             </div>
             <div className="w-full px-4 py-1.5 justify-start items-start gap-2 inline-flex">
-              <div className="grow shrink basis-0 text-[var(--Text-primary, var(--Icon-primary, #FFF))] text-[13px] font-medium leading-[20px]">
+              <a
+                href="https://novarealchain.com/the-benefits-of-tokenizing-real-world-assets-rwa/"
+                className="grow shrink basis-0 text-[var(--Text-primary, var(--Icon-primary, #FFF))] text-[13px] font-medium leading-[20px]"
+              >
                 RWA Tokenization
-              </div>
+              </a>
             </div>
             <div className="w-full px-4 py-1.5 justify-start items-start gap-2 inline-flex">
-              <div className="grow shrink basis-0 text-[var(--Text-primary, var(--Icon-primary, #FFF))] text-[13px] font-medium leading-[20px]">
+              <a
+                href="https://novarealchain.com/nova-real-chain-real-estate-tokenization/"
+                className="grow shrink basis-0 text-[var(--Text-primary, var(--Icon-primary, #FFF))] text-[13px] font-medium leading-[20px]"
+              >
                 Real Estate Tokenization
-              </div>
+              </a>
             </div>
           </div>
         </div>
@@ -156,24 +185,36 @@ const Footer = () => {
           </div>
           <div className="self-stretch h-auto flex-col justify-start items-start gap-2 flex">
             <div className="w-full px-4 py-1.5 justify-start items-start gap-2 inline-flex">
-              <div className="grow shrink basis-0 text-[var(--Text-primary, var(--Icon-primary, #FFF))] text-[13px] font-medium leading-[20px]">
+              <a
+                href="#"
+                className="grow shrink basis-0 text-[var(--Text-primary, var(--Icon-primary, #FFF))] text-[13px] font-medium leading-[20px]"
+              >
                 About Us
-              </div>
+              </a>
             </div>
             <div className="w-full px-4 py-1.5 justify-start items-start gap-2 inline-flex">
-              <div className="grow shrink basis-0 text-[var(--Text-primary, var(--Icon-primary, #FFF))] text-[13px] font-medium leading-[20px]">
+              <a
+                href="#"
+                className="grow shrink basis-0 text-[var(--Text-primary, var(--Icon-primary, #FFF))] text-[13px] font-medium leading-[20px]"
+              >
                 Team
-              </div>
+              </a>
             </div>
             <div className="w-full px-4 py-1.5 justify-start items-start gap-2 inline-flex">
-              <div className="grow shrink basis-0 text-[var(--Text-primary, var(--Icon-primary, #FFF))] text-[13px] font-medium leading-[20px]">
+              <a
+                href="#"
+                className="grow shrink basis-0 text-[var(--Text-primary, var(--Icon-primary, #FFF))] text-[13px] font-medium leading-[20px]"
+              >
                 Documentation
-              </div>
+              </a>
             </div>
             <div className="w-full px-4 py-1.5 justify-start items-start gap-2 inline-flex">
-              <div className="grow shrink basis-0 text-[var(--Text-primary, var(--Icon-primary, #FFF))] text-[13px] font-medium leading-[20px]">
+              <a
+                href="#"
+                className="grow shrink basis-0 text-[var(--Text-primary, var(--Icon-primary, #FFF))] text-[13px] font-medium leading-[20px]"
+              >
                 Contact
-              </div>
+              </a>
             </div>
           </div>
         </div>
@@ -185,19 +226,28 @@ const Footer = () => {
           </div>
           <div className="self-stretch h-auto flex-col justify-start items-start gap-2 flex">
             <div className="w-full px-4 py-1.5 justify-start items-start gap-2 inline-flex">
-              <div className="grow shrink basis-0 text-[var(--Text-primary, var(--Icon-primary, #FFF))] text-[13px] font-medium leading-[20px]">
+              <a
+                href="#"
+                className="grow shrink basis-0 text-[var(--Text-primary, var(--Icon-primary, #FFF))] text-[13px] font-medium leading-[20px]"
+              >
                 Legal Disclaimer
-              </div>
+              </a>
             </div>
             <div className="w-full px-4 py-1.5 justify-start items-start gap-2 inline-flex">
-              <div className="grow shrink basis-0 text-[var(--Text-primary, var(--Icon-primary, #FFF))] text-[13px] font-medium leading-[20px]">
+              <a
+                href="#"
+                className="grow shrink basis-0 text-[var(--Text-primary, var(--Icon-primary, #FFF))] text-[13px] font-medium leading-[20px]"
+              >
                 Terms & <br /> Conditions
-              </div>
+              </a>
             </div>
             <div className="w-full px-4 py-1.5 justify-start items-start gap-2 inline-flex">
-              <div className="grow shrink basis-0 text-[var(--Text-primary, var(--Icon-primary, #FFF))] text-[13px] font-medium leading-[20px]">
+              <a
+                href="#"
+                className="grow shrink basis-0 text-[var(--Text-primary, var(--Icon-primary, #FFF))] text-[13px] font-medium leading-[20px]"
+              >
                 Privacy Policy
-              </div>
+              </a>
             </div>
           </div>
         </div>

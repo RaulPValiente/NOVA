@@ -20,11 +20,23 @@ const Header = () => {
       </div>
       <div className="mb-6">
         <h1
+          className="w-full text-center text-[40px] font-semibold sm:w-[535px] sm:text-7xl sm:font-bold bg-clip-text"
+          style={{
+            background:
+              'linear-gradient(180deg, rgba(241, 255, 255, 0.30) 16.67%, #F1FFFF 85.63%)',
+            backgroundClip: 'text',
+            color: 'transparent', // Esto asegura que el texto sea transparente para ver el fondo
+          }}
+        >
+          Power the Next
+        </h1>
+
+        <h1
           className="w-full text-center text-white text-[40px] font-semibold
           sm:w-[535px] sm:text-7xl sm:font-bold
           "
         >
-          Power the Next Big Startup
+          Big Startup
         </h1>
       </div>
       <div className="mb-12">
@@ -36,7 +48,7 @@ const Header = () => {
           Back the future’s game-changers and earn massive profits + shares!
         </h2>
       </div>
-      <ArrowButton text="Get Started" url='https://novarealchain.com/' />
+      <ArrowButton text="Get Started" url="https://novarealchain.com/" />
     </div>
   );
 };
