@@ -13,7 +13,7 @@ import { useMediaQuery } from '@react-hook/media-query';
 
 import Logo from './assets/token.png';
 import Default from './assets/card_image.svg';
-import BackgroundDesktop from './assets/rive/bg.mp4';
+import BackgroundDesktop from './assets/rive/bg.webm';
 import BackgroundTablet from './assets/responsive/bg_tablet.png';
 import BackgroundMobile from './assets/responsive/bg_mobile.png';
 
