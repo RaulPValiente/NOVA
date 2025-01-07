@@ -12,7 +12,7 @@ const Header = () => {
         >
           {/* Telegram Link */}
           <a
-            href="https://t.me/NovaRealChainENG"  // Aquí cambia la URL por la de tu canal de Telegram
+            href="https://t.me/NovaRealChainENG" // Aquí cambia la URL por la de tu canal de Telegram
             target="_blank"
             rel="noopener noreferrer"
             className="px-[16px] py-[6px] bg-black/60 rounded-[100px] shadow custom-border"
@@ -22,7 +22,7 @@ const Header = () => {
 
           {/* Twitter (X) Link */}
           <a
-            href="https://x.com/novarealchain"  // Aquí cambia la URL por tu perfil de Twitter
+            href="https://x.com/novarealchain" // Aquí cambia la URL por tu perfil de Twitter
             target="_blank"
             rel="noopener noreferrer"
             className="px-[16px] py-[6px] bg-black/60 rounded-[100px] shadow custom-border"
@@ -32,15 +32,7 @@ const Header = () => {
         </div>
       </div>
       <div className="mb-6">
-        <h1
-          className="w-full text-center text-[40px] font-semibold sm:w-[535px] sm:text-7xl sm:font-bold bg-clip-text"
-          style={{
-            background:
-              'linear-gradient(180deg, rgba(241, 255, 255, 0.30) 16.67%, #F1FFFF 85.63%)',
-            backgroundClip: 'text',
-            color: 'transparent', // Esto asegura que el texto sea transparente para ver el fondo
-          }}
-        >
+        <h1 className="w-full text-center text-[40px] font-semibold sm:w-[535px] sm:text-7xl sm:font-bold bg-gradient-to-b from-[rgba(241,255,255,0.3)] to-[#F1FFFF] bg-clip-text text-transparent">
           Power the Next
         </h1>
 
