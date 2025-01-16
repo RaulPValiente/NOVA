@@ -1,7 +1,8 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const SpaceBg = () => {
   const canvasRef = useRef(null);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -10,7 +11,7 @@ const SpaceBg = () => {
     const STAR_SIZE = 3;
     const STAR_MIN_SCALE = 0.2;
     const OVERFLOW_THRESHOLD = 50;
-    const STAR_COUNT = (window.innerWidth + window.innerHeight) / 8;
+    const STAR_COUNT = (window.innerWidth + window.innerHeight) / 10;
 
     let scale = 1; // device pixel ratio
     let width;
@@ -101,7 +102,6 @@ const SpaceBg = () => {
       velocity.tx *= 0.96;
       velocity.ty *= 0.96;
 
-      // Ajustar la amortiguación para reducir la velocidad del movimiento
       velocity.x += (velocity.tx - velocity.x) * 0.5;
       velocity.y += (velocity.ty - velocity.y) * 0.5;
 
@@ -132,18 +132,11 @@ const SpaceBg = () => {
         context.beginPath();
         context.lineCap = 'round';
         context.lineWidth = STAR_SIZE * star.z * scale;
-        context.globalAlpha = star.alpha; // Usar opacidad precomputada
+        context.globalAlpha = star.alpha;
         context.strokeStyle = STAR_COLOR;
 
         context.moveTo(star.x, star.y);
-
-        let tailX = velocity.x * 2;
-        let tailY = velocity.y * 2;
-
-        if (Math.abs(tailX) < 0.1) tailX = 0.5;
-        if (Math.abs(tailY) < 0.1) tailY = 0.5;
-
-        context.lineTo(star.x + tailX, star.y + tailY);
+        context.lineTo(star.x + velocity.x * 2, star.y + velocity.y * 2);
         context.stroke();
       });
     };
@@ -153,7 +146,6 @@ const SpaceBg = () => {
         let ox = x - pointerX;
         let oy = y - pointerY;
 
-        // Reducir la sensibilidad del ratón aumentando el divisor
         velocity.tx = velocity.tx + (ox / 16) * scale * (touchInput ? 1 : -1);
         velocity.ty = velocity.ty + (oy / 16) * scale * (touchInput ? 1 : -1);
       }
@@ -166,7 +158,7 @@ const SpaceBg = () => {
       let resizeTimeout;
       return () => {
         clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(resize, 200); // Llamar a resize solo después de 200ms
+        resizeTimeout = setTimeout(resize, 200);
       };
     };
 
@@ -186,7 +178,6 @@ const SpaceBg = () => {
       pointerY = null;
     };
 
-    // Usar window para los eventos de movimiento
     window.addEventListener('resize', debounceResize());
     window.addEventListener('mousemove', onMouseMove);
     window.addEventListener('touchmove', onTouchMove);
@@ -196,6 +187,7 @@ const SpaceBg = () => {
     generate();
     resize();
     step();
+    setIsLoaded(true); // Indicar que la animación está lista
 
     return () => {
       window.removeEventListener('resize', debounceResize());
@@ -209,6 +201,11 @@ const SpaceBg = () => {
   return (
     <canvas
       ref={canvasRef}
+      style={{
+        opacity: isLoaded ? 1 : 0,
+        visibility: isLoaded ? 'visible' : 'hidden',
+        transition: 'opacity 0.5s ease',
+      }}
       className="absolute top-0 left-0 w-full h-full -z-10 pointer-events-none"
     ></canvas>
   );
