@@ -1,5 +1,6 @@
 import ArrowButton from '../components/ArrowButton';
 import bg from '../assets/bg-apply.png';
+import Spline from '@splinetool/react-spline';
 
 const Apply = () => {
   return (
@@ -31,8 +32,14 @@ const Apply = () => {
         </div>
 
         {/* Parte Derecha */}
-        <div className="w-full sm:w-1/2 h-[200px] sm:h-auto flex items-center justify-center mt-4 sm:mt-0">
-          {/* Aquí irá la animación */}
+        <div className="w-full sm:w-1/2 flex items-center justify-center mt-4 sm:mt-0">
+          {/* Contenedor del Spline */}
+          <div className="w-full h-full relative">
+            <Spline
+              scene="https://prod.spline.design/DJRH8HaRnjVof7xa/scene.splinecode"
+              className="absolute top-0 left-0 w-full h-full object-cover"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -40,4 +47,3 @@ const Apply = () => {
 };
 
 export default Apply;
-
